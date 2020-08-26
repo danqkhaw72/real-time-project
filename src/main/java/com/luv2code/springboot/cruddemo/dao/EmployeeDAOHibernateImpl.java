@@ -3,6 +3,7 @@ package com.luv2code.springboot.cruddemo.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -24,6 +25,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<Employee> findAll() {
 		
 		// get the current hibernate session
